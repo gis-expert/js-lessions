@@ -1,14 +1,5 @@
 import {len} from './len.js';
 
-function countChar(text) {
-    let charGroup = String.fromCharCode();
-
-    for (let a = 0; a !== len(text); a++) {
-        charGroup += text.charCodeAt(a);
-    }
-    return charGroup;
-}
-
 function argumTypeMismatch(firstText, secondText) {
     if (typeof firstText !== 'string' || typeof secondText !== 'string') {
         throw Error('argument must be type of string');
@@ -21,10 +12,11 @@ function argumTypeMismatch(firstText, secondText) {
 export function isEqual(firstText, secondText) {
     argumTypeMismatch(firstText, secondText);
 
-    if (countChar(firstText) !== countChar(secondText) || len(firstText) !== len(secondText)) {
-        return false;
+    for (let a = 0; a !== Math.max(len(firstText), len(secondText)); a++) {
+        if (firstText.charCodeAt(a) !== secondText.charCodeAt(a)) {
+            return false;
+        }
     }
-
     return true;
 }
 
@@ -32,10 +24,11 @@ export function isEqual(firstText, secondText) {
 export function isNotEqual(firstText, secondText) {
     argumTypeMismatch(firstText, secondText);
 
-    if (countChar(firstText) !== countChar(secondText) || len(firstText) !== len(secondText)) {
-        return true;
+    for (let a = 0; a !== Math.max(len(firstText), len(secondText)); a++) {
+        if (firstText.charCodeAt(a) !== secondText.charCodeAt(a)) {
+            return true;
+        }
     }
-
     return false;
 }
 
@@ -43,66 +36,81 @@ export function isNotEqual(firstText, secondText) {
 export function isMore(firstText, secondText) {
     argumTypeMismatch(firstText, secondText);
 
-    if (countChar(firstText) > countChar(secondText)) {
-        return true;
-    }
-
-    if (countChar(firstText) <= countChar(secondText)) {
+        for (let a = 0; a !== Math.max(len(firstText), len(secondText)); a++) {
+            if (firstText.charCodeAt(a) > secondText.charCodeAt(a)) {
+                return true;
+            } 
+            if (firstText.charCodeAt(a) < secondText.charCodeAt(a)) {
+                return false;
+            }
+            if (isNaN(firstText.charCodeAt(a))) {
+                return false;
+            }
+            if (isNaN(secondText.charCodeAt(a))) {
+                return true;
+            }
+        }
         return false;
-    }
-
-    if (len(firstText) < len(secondText)) {
-        return false;
-    }
 }
 
 /** возвращает булевый ответ меньше ли параметр firstText чем secondText. */
 export function isLess(firstText, secondText) {
     argumTypeMismatch(firstText, secondText);
 
-    if (countChar(firstText) < countChar(secondText)) {
-        return true;
+    for (let a = 0; a !== Math.max(len(firstText), len(secondText)); a++) {
+        if (firstText.charCodeAt(a) < secondText.charCodeAt(a)) {
+            return true;
+        } 
+        if (firstText.charCodeAt(a) > secondText.charCodeAt(a)) {
+            return false;
+        }
+        if (isNaN(firstText.charCodeAt(a))) {
+            return true;
+        }
+        if (isNaN(secondText.charCodeAt(a))) {
+            return false;
+        }
     }
+    return false;
 
-    if (countChar(firstText) >= countChar(secondText)) {
-        return false;
-    }
-
-    if (len(firstText) > len(secondText)) {
-        return false;
-    }
 }
 
 /** возвращает булевый ответ больше или равно ли параметр firstText чем secondText. */
 export function isMoreOrEqual(firstText, secondText) {
     argumTypeMismatch(firstText, secondText);
-
-    if (countChar(firstText) >= countChar(secondText)) {
-        return true;
+    for (let a = 0; a !== Math.max(len(firstText), len(secondText)); a++) {
+        if (firstText.charCodeAt(a) < secondText.charCodeAt(a)) {
+            return false;
+        }
+        if (firstText.charCodeAt(a) > secondText.charCodeAt(a)) {
+            return true;
+        }
+        if (isNaN(firstText.charCodeAt(a))) {
+            return false;
+        }
+        if (isNaN(secondText.charCodeAt(a))) {
+            return true;
+        }
     }
-
-    if (countChar(firstText) <= countChar(secondText)) {
-        return false;
-    }
-
-    if (len(firstText) < len(secondText)) {
-        return false;
-    }
+    return true;
 }
 
 /** возвращает булевый ответ меньше или равно ли параметр firstText чем secondText. */
 export function isLessOrEqual(firstText, secondText) {
     argumTypeMismatch(firstText, secondText);
-
-    if (countChar(firstText) <= countChar(secondText)) {
-        return true;
+    for (let a = 0; a !== Math.max(len(firstText), len(secondText)); a++) {
+        if (firstText.charCodeAt(a) < secondText.charCodeAt(a)) {
+            return true;
+        }
+        if (firstText.charCodeAt(a) > secondText.charCodeAt(a)) {
+            return false;
+        }
+        if (isNaN(firstText.charCodeAt(a))) {
+            return true;
+        }
+        if (isNaN(secondText.charCodeAt(a))) {
+            return false;
+        }
     }
-
-    if (countChar(firstText) >= countChar(secondText)) {
-        return false;
-    }
-
-    if (len(firstText) > len(secondText)) {
-        return false;
-    }
+    return true;
 }

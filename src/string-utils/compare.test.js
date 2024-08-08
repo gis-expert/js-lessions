@@ -11,6 +11,7 @@ describe('isEqualTests', () => {
   });
 
   test('количество символов одинаково, но не равны', () => {
+    expect(isEqual('ad', 'bc')).toBe(false);
     expect(isEqual('abc', 'abc')).toBe(true);
     expect(isEqual('abc', 'abb')).toBe(false);
   });
