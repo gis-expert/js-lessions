@@ -59,17 +59,11 @@ export function isLess(firstText, secondText) {
 /** возвращает булевый ответ больше или равно ли параметр firstText чем secondText. */
 export function isMoreOrEqual(firstText, secondText) {
     argumTypeMismatch(firstText, secondText);
-    if (isEqual(firstText, secondText)) {
-        return true;
-    }
-        return isMore(firstText, secondText);
+    return isEqual(firstText, secondText) || isMore(firstText, secondText);
 }
 
 /** возвращает булевый ответ меньше или равно ли параметр firstText чем secondText. */
 export function isLessOrEqual(firstText, secondText) {
     argumTypeMismatch(firstText, secondText);
-    if (isEqual(firstText, secondText)) {
-        return true;
-    }
-        return !isMore(firstText, secondText);
+    return isEqual(firstText, secondText) || !isMore(firstText, secondText);
 }
