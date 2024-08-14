@@ -10,14 +10,15 @@ describe('isEqualTests', () => {
     expect(isEqual('a', 'b')).toBe(false);
   });
 
-  // test('количество символов одинаково, но не равны', () => {
-  //   expect(isEqual('abc', 'abc')).toBe(true);
-  //   expect(isEqual('abc', 'abb')).toBe(false);
-  // });
-  //
-  // test('символы совпадают, но у первого больше символов', () => {
-  //   expect(isEqual('abbb', 'abb')).toBe(false);
-  // });
+  test('количество символов одинаково, но не равны', () => {
+    expect(isEqual('ad', 'bc')).toBe(false);
+    expect(isEqual('abc', 'abc')).toBe(true);
+    expect(isEqual('abc', 'abb')).toBe(false);
+  });
+
+  test('символы совпадают, но у первого больше символов', () => {
+    expect(isEqual('abbb', 'abb')).toBe(false);
+  });
   //
   // test('символы совпадают, но у второго больше символов', () => {
   //   expect(isEqual('abb', 'abbb')).toBe(false);
