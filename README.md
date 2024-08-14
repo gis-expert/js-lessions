@@ -16,4 +16,6 @@
 1. [Отправляем свой код на код-ревью](https://github.com/gis-expert/dedok/wiki/1.9.-git-hub-and-code-review)
 
 ### Этап 2.
-будет дополняться...
+1. [reverse function](https://github.com/gis-expert/dedok/wiki/1.10.-reverse)
+1. [repeat function](https://github.com/gis-expert/dedok/wiki/1.12.-repeat)
+1. [substring function](https://github.com/gis-expert/dedok/wiki/1.13.-substring)
