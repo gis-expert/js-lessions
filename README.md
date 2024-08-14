@@ -25,6 +25,7 @@
 1. **remove function**  
     __Описание задачи:__
     Реализуйте функцию `remove(text: string, charToRemove: string): string`, которая принимает строку text и символ charToRemove, и возвращает новую строку, из которой удалены все вхождения символа charToRemove.  
+    Необходимо будет создать файлы remove.ts, remove.test.ts  
     Написать тесты которые проверяют требования к функции.
 
 1. [Отправляем свой код на код-ревью](https://github.com/gis-expert/dedok/wiki/1.9.-git-hub-and-code-review)
