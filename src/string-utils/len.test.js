@@ -17,28 +17,28 @@ describe('lenTests', () => {
     expect(len('\n')).toBe(1);
   });
 
-  // // Тесты на сложные строки
-  // test('сложные строки возвращают истинную длину', () => {
-  //   expect(len(complexText)).toBe(complexText.length);
-  // });
-  //
-  // // Тест на строку с кириллическими символами
-  // test('строка с кириллическими символами', () => {
-  //   const testString = 'Это 1 строка с кириллическими символами вместе с символом перевода строки \n';
-  //   expect(len(testString)).toBe(testString.length);
-  // });
-  //
-  // // Тесты на вызовы без передачи аргумента и с неправильными типами аргументов
-  // test('вызов без передачи аргумента выдает ошибку исполнения', () => {
-  //   const errStr = 'argument must be type of string';
-  //   expect(() => len()).toThrow(errStr);
-  // });
-  //
-  // test('другие типы выдают ошибку исполнения', () => {
-  //   const errStr = 'argument must be type of string';
-  //   expect(() => len(1)).toThrow(errStr);
-  //   expect(() => len(true)).toThrow(errStr);
-  //   expect(() => len([])).toThrow(errStr);
-  //   expect(() => len(null)).toThrow(errStr);
-  // });
+  // Тесты на сложные строки
+  test('сложные строки возвращают истинную длину', () => {
+    expect(len(complexText)).toBe(complexText.length);
+  });
+  
+  // Тест на строку с кириллическими символами
+  test('строка с кириллическими символами', () => {
+    const testString = 'Это 1 строка с кириллическими символами вместе с символом перевода строки \n';
+    expect(len(testString)).toBe(testString.length);
+  });
+  
+  // Тесты на вызовы без передачи аргумента и с неправильными типами аргументов
+  test('вызов без передачи аргумента выдает ошибку исполнения', () => {
+    const errStr = 'argument must be type of string';
+    expect(() => len()).toThrow(errStr);
+  });
+  
+  test('другие типы выдают ошибку исполнения', () => {
+    const errStr = 'argument must be type of string';
+    expect(() => len(1)).toThrow(errStr);
+    expect(() => len(true)).toThrow(errStr);
+    expect(() => len([])).toThrow(errStr);
+    expect(() => len(null)).toThrow(errStr);
+  });
 });

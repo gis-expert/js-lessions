@@ -12,9 +12,9 @@ export function isEqual(firstText, secondText) {
     argumTypeMismatch(firstText, secondText);
     const textLength = Math.max(len(firstText), len(secondText));
     for (let a = 0; a !== textLength; a++) {
-        if (firstText.charCodeAt(a) !== secondText.charCodeAt(a)) {
-            return false;
-        }
+    if (firstText.charCodeAt(a) !== secondText.charCodeAt(a)) {
+        return false;
+    }
     }
     return true;
 }
@@ -32,17 +32,17 @@ export function isMore(firstText, secondText) {
     }
     const textLength = Math.max(len(firstText), len(secondText));
     for (let a = 0; a !== textLength; a++) {
-        if (firstText.charCodeAt(a) > secondText.charCodeAt(a)) {
-            return true;
-        } 
-        if (firstText.charCodeAt(a) < secondText.charCodeAt(a)) {
-            return false;
+    if (firstText.charCodeAt(a) > secondText.charCodeAt(a)) {
+        return true;
+    } 
+    if (firstText.charCodeAt(a) < secondText.charCodeAt(a)) {
+        return false;
+    }
+    if (isNaN(firstText.charCodeAt(a))) {
+        return false;
         }
-        if (isNaN(firstText.charCodeAt(a))) {
-                return false;
-        }
-        if (isNaN(secondText.charCodeAt(a))) {
-                return true;
+    if (isNaN(secondText.charCodeAt(a))) {
+        return true;
         }
     }
 }
