@@ -11,6 +11,5 @@ export function repeat(text, count = 1) {
         result += text;
     }
     return result;  
-
 }
     
