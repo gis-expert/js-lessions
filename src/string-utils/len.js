@@ -3,6 +3,6 @@ export function len(text) {
         throw Error('argument must be type of string');
     }
     let a = 0;
-    while (text[a] !== undefined){a++}   
+    for (;text[a] !== undefined; a++){}   
     return a;
 }
