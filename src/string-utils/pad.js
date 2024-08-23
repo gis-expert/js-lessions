@@ -8,6 +8,7 @@ export function padStart(text, maxLength, fillString = ' ') {
  * заполненный в конце символами fillString.
  * Допускается в fillString передавать строку из нескольких символов. */
 export function padEnd(text, maxLength, fillString = ' ') {
+    
 }
 
 /** Возвращает копию text увеличенный до длины maxLength
